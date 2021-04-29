@@ -1,0 +1,73 @@
+<html>
+    <head>
+        
+        <!-- JQuery -->
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>	
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="shortcut icon" href="#">
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Open+Sans&display=swap" rel="stylesheet">
+
+    </head>
+
+    <script>
+        //pass data from server to client 
+        const data='{{ id|tojson }}'
+        const data2 = '{{ products|tojson }}'
+        const data3 = '{{ skills|tojson }}'
+        const data4 = '{{ cities|tojson }}'
+        id = JSON.parse(data);   
+        products = JSON.parse(data2)
+        skills = JSON.parse(data3)
+        cities = JSON.parse(data4)
+    </script>
+    
+    <style>
+.open{
+        font-family: 'Open Sans', sans-serif;
+        
+    }
+    </style>
+
+    <body>
+        <div class="container open">
+            <!-- <div class="row">
+                <div class="col">
+                    {% include 'logo.html' %}
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col">
+                    {% include 'navbar.html' %}
+                </div>
+            </div>
+            <br>
+            <br><br>
+            <br>
+            <div class="row">
+                <div class="col" id="item-info">
+
+                </div>
+            </div>
+            <div class="row">
+                <div id="revert" class="col" >
+
+                </div>
+            </div>
+            <div class="row">
+                <div id="undo-deletion" class="col" >
+
+                </div>
+            </div>
+            <br><br><br><br><br><br><br><br><br><br><br>
+            <div class="row">
+                {% include 'footer.html' %}
+            </div>
+        </div>
+            <!-- My Scripts  -->
+    <script src="{{ url_for('static', filename='view_item.js') }}"></script>
+    </body>
+</html>

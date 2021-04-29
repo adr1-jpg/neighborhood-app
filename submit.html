@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<!-- JQuery -->
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>	
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="shortcut icon" href="#">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+
+
+<style>
+    .add-button{
+        position: absolute;
+        bottom: 0;
+
+    }
+
+
+</style>
+<body>
+      <div class="row">
+        <div class="col">
+            {% include 'navbar.html' %}
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div id="success" class="col-5"></div>
+     
+        <div id="view-button" class="col-7"></div>
+      </div>
+      <br>
+      <h3>What can you teach others?</h3>
+<br>
+      <form>
+        <div class="form-row"autocomplete="off">
+          <div class="form-group col-md-6">
+            <label for="enter_name">Name</label>
+            <input autocomplete="off"type="email" class="form-control" id="enter_name" placeholder="First and Last Name">
+            <div class="warning_div" id="name_warning"></div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="enter_email">Email</label>
+            <input autocomplete="off" type="text" class="form-control" id="enter_email" placeholder="Email">
+            <div class="warning_div" id="email_warning"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="enter_skills">Skill</label>
+          <input autocomplete="off" type="text" class="form-control" id="enter_skills" placeholder="Skill">
+          <div class="warning_div" id="skill_warning"></div>
+        </div>
+        <div class="form-group"autocomplete="off" >
+          <label for="enter_summary">Description</label>
+          <input autocomplete="off"type="text" class="form-control" id="enter_summary" placeholder="Description">
+          <div class="warning_div" id="summary_warning"></div>
+        </div>
+        <div class="form-row"  >
+          <div class="form-group col-md-6"autocomplete="off" >
+            <label for="enter_city">Town</label>
+            <input autocomplete="off" type="text" class="form-control" id="enter_city" placeholder="Your Town"> 
+            <div class="warning_div" id="city_warning"></div>
+          </div>
+          <div class="form-group col-md-6"autocomplete="off" >
+            <label for="enter_img">Image Link</label>
+            <input autocomplete="off" type="text" class="form-control" id="enter_img" placeholder="Image Link"> 
+            <div class="warning_div" id="img_warning"></div>
+          </div>
+
+          
+        </div>
+        
+        <div id="dates">
+            <div class="form-row"  >
+              <div class="col-6"  >
+                <label for="enter_img">Availability</label>
+                <input autocomplete="off" type="text" id="enter_days"  class="form-control" placeholder="Date available">
+                <div class="warning_div" id="days_warning"></div>
+              </div>
+              <div class="col-3">
+                  
+                <button id="add_date" class="btn btn-outline-primary my-2 my-sm-0 add-button" type="submit">Add Date</button>
+              </div>
+            </div>
+          </div>
+        <br>
+
+  
+        <button type="submit" id="submit"class="btn btn-primary col-1">Post</button>
+
+
+        
+
+      </form>
+      
+      <!-- My Scripts  -->
+<script src="{{ url_for('static', filename='submit.js') }}"></script>
+</body>
+<br><br><br><br>
+{% include 'footer.html' %} 
+</html>

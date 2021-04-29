@@ -1,0 +1,76 @@
+<html>
+<head>
+	
+	<!-- JQuery -->
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>	
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="shortcut icon" href="#">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Open+Sans&display=swap" rel="stylesheet">
+
+</head>
+<!-- My Scripts  -->
+<!-- <script src="{{ url_for('static', filename='neighborhood.js') }}"></script> -->
+
+   <style>    .open{
+    font-family: 'Open Sans', sans-serif;
+    
+}</style>
+<script>
+   // pass data from server to client 
+    const data='{{ products|tojson }}'
+    const data2='{{ skills|tojson }}'
+    const data3='{{ cities|tojson }}'
+    const data4='{{ results|tojson }}'
+    const data5='{{ input_search|tojson }}'
+
+    products = JSON.parse(data);   
+    skills = JSON.parse(data2)
+    cities = JSON.parse(data3)
+    results = JSON.parse(data4)
+    input_search = JSON.parse(data5)
+
+</script>
+
+<body>
+
+      
+    <div class="container open">
+        <div class="row">
+            <div class="col">
+                {% include 'navbar.html' %}
+            </div>
+        </div>
+ 
+          <br>
+          <div class="row">
+            <div id="count" class="col">
+                
+            </div>
+          </div>
+          <br>
+          
+        <div id="results_row" class="row">
+            
+            <div id="search-results" class="col">
+                
+            </div>
+
+        </div>
+
+        <br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        {% include 'footer.html' %} 
+    
+    </div>
+    
+    <script src="{{ url_for('static', filename='search-results.js') }}"></script>
+
+</body>
