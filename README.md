@@ -26,3 +26,24 @@ The purpose of this app is to allow people to meet their neighbors in a fun way,
 
 ## Photos
 
+#### Homepage
+![Homepage](/images/homepage.png)
+![Featured](/images/featured.png)
+![Stories](/images/stories.png)
+
+#### Create Post Page
+
+![Create Post](/images/post.png)
+![Edit Post](/images/postattempt.png)
+
+#### View Post Page
+
+![View Post](/images/view.png)
+Can edit the description field of a post and also remove dates from availability. Saved in backend.
+![Edit Post](/images/editpost.png)
+
+#### Search Results Page
+
+![Search Results](/images/results.png)
+
+
